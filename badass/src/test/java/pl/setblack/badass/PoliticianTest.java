@@ -25,6 +25,16 @@ public class PoliticianTest {
     }
 
     @Test
+    public void testComplexTaskExecuted() {
+        final StringBuilder slogan = new StringBuilder("yes");
+        Politician.beatAroundTheBush(() -> {
+            slogan.append(" we");
+            slogan.append(" can");
+        });
+        assertEquals("yes we can", slogan.toString());
+    }
+
+    @Test
     public void testTaskExecutedAndReturns() {
         final StringBuilder slogan = new StringBuilder("yes");
         slogan.append(Politician.beatAroundTheBush(() -> " we can"));
@@ -33,7 +43,7 @@ public class PoliticianTest {
 
     @Test(expected = RuntimeException.class)
     public void testTaskException() {
-        Politician.beatAroundTheBush(() -> {
+        Politician.beatAroundTheBush((Valueless) () -> {
             throw new Exception("what if we can't");
         });
 

@@ -24,4 +24,20 @@ public class Politician {
             throw new RuntimeException(e);
         }
     }
+
+    /**
+     * If exception happens during callable automatically wrap it in
+     * RuntimeException.
+     *
+     * If exception does not return value it may be needed to Cast it to
+     * Valueless. Othrwise compiler may have problem determining return type.
+     */
+    public static void beatAroundTheBush(Valueless callable) {
+        try {
+            callable.call();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }
