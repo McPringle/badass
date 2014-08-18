@@ -4,7 +4,7 @@
     <name>Badass</name>
     <groupId>pl.setblack</groupId>
     <artifactId>badass</artifactId>
-    <version>1.0</version>
+    <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <description>Simple but not very clever constructions that make programmming easier</description>
     <url>https://github.com/jarekratajski/badass</url>
